@@ -1,15 +1,41 @@
 # security
-Sample application with security framework and admin pages
+Pages and components for creating an AA login system.
 
 
-### Components in this repo
+### Components in this Repo
 
-login.a5wcmp - This UX allows users to log in. Upon sucessful login page, there users are taken to a page called portal.a5w. The component is embedded into the login.a5w page. 
+login.a5wcmp - This UX allows users to log in. Upon sucessful login page, there users are taken to a page called portal.a5w. The component is embedded into the login.a5w page. After login, the user is brought to a page called portal.a5w
 
-
-
-
-
-This is the structure of the PWreset table
+requestReset.a5wcmp - This UX is where users enter their names to request that there password is reset. The component contains a function called resetRequest. In it you need to add a connection string to a table called PWreset. Look for the part in the code that reads [[INSERT YOUR KEY HERE]] The structure for the needed structure for the PWreset table is shown below. 
 ![image](https://user-images.githubusercontent.com/12627665/119546088-8376a400-bd61-11eb-9068-b44451a35ad1.png)
+You will also need to replace the Sparkpost key with one of your own. (Please test your key first, they can be tricky). Look for for the part of the code that reads [[INSERT YOUR KEY HERE]].
+
+userChangePassword.a5wcmp - This UX lets the user enter their new password. It is a derivative of the built-in UX template
+also called userChangePassword. In this version of the component, the user is assumed to be logged in, and their username and 
+current (a.k.a. "old") password are stored in session variables. These session variables automatically fill the username and 
+password fields, which are hidden from the user. After they are reset, the user is brought to a page called portal.a5w.
+
+### Pages in this Repo
+
+login.a5w - This is the login page and is used to hold the login.a5wcmp UX component.
+
+forbidden.a5w - This is a page the user sees if they try to get to a page they are not allowed to access.
+
+requestReset.a5w - This is the page that holds he requestReset.a5wcmp UX component.
+
+resetPart1.a5w - This is the page the user gets to when they click a password reset link in their email. The page expects the URL to contain a query string with a GUID. The page then checks to see if the GUID is present, valid, and has not expired. The 
+page is hardcoded to only allow GUIDs issued within the last 20 minutes. This page also relies on you to supply a connection string to a table called PWreset. Look for the part of the code that reads [[Your Connection String Name]].  There are two instances of [[Your Connection String Name]] in the code, so make sure you replace both of them. (See requestReset.a5wcmp above for notes about the structure of the PWreset table. If the GUID is accepted, the user is immediately redirected to the resetPart2.a5w page. 
+
+resetPart2.a5w - This is the page where the user enters their new password. It holds the userChangePassword.a5w embedded component.
+
+portal.a5w - This is the page the user gets to when they have successfully logged in. It's meant to be replaced with your own content.
+
+
+For questions about this content, please contact guides@alphasoftware.com
+
+
+
+
+
+
 
