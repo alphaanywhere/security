@@ -14,7 +14,7 @@ You will also need to replace the Sparkpost key so that the system can send emai
 userChangePassword.a5wcmp - This UX lets the user enter their new password. It is a derivative of the built-in UX template
 also called userChangePassword. In this version of the component, the user is assumed to be logged in, and their username and 
 current (a.k.a. "old") password are stored in session variables. These session variables automatically fill the username and 
-password fields, which are hidden from the user. After the user resets their passwrd, they are brought to a page called portal.a5w.
+password fields, which are hidden from the user. After the user resets their password, they are brought to a page called portal.a5w. This component embedded in a page called resetPart2.a5w.
 
 ### Pages in this Repo
 
