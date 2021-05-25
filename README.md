@@ -2,6 +2,11 @@
 Sample application with security framework and admin pages
 
 
+### Components in this repo
+
+login.a5wcmp - This UX allows users to log in. Upon sucessful login page, there users are taken to a page called portal.a5w. The component is embedded into the login.a5w page. 
+
+
 
 
 
