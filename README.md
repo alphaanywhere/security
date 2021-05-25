@@ -1,6 +1,7 @@
 # security
 Pages and components for creating an AA login system.
 
+A six minute video explaining this repo can be found here: https://www.viddler.com/v/9116e917
 
 ### Components in this Repo
 
