@@ -9,6 +9,7 @@ login.a5wcmp - This UX allows users to log in. Upon sucessful login, users are t
 
 requestReset.a5wcmp - This UX is where users enter their email to request a password reset. The component contains a function called resetRequest, which relies on you to supply a connection string to a table called PWreset. Look for the part in the code that reads [[YOUR CONNNECTION STRING NAME]] The structure needed for the PWreset table is shown below. 
 ![image](https://user-images.githubusercontent.com/12627665/119546088-8376a400-bd61-11eb-9068-b44451a35ad1.png)
+
 You will also need to replace the Sparkpost key so that the system can send emails with the password reset links. (See sparkpost.com for details. Alternatively, you could edit the code to send using a different email provider). Look for for the part of the code that reads [[INSERT YOUR KEY HERE]]. This component is embedded in the resetPart2.a5w page. You will also want to change the wording of the password reset email especially the part of the email that specifies the URL of the password reset link. 
 
 userChangePassword.a5wcmp - This UX lets the user enter their new password. It is a derivative of the built-in UX template
